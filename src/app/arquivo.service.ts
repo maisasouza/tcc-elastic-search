@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -15,9 +15,9 @@ export class ArquivoService {
 
 
     formData.append('file', file);
-    formData.append('quantidade', new Blob([JSON.stringify(valor)]));
+    formData.append('quantidade', new Blob([JSON.stringify(valor)], {type: 'application/json'}));
 
-    return this.http.post('http://localhost:8080/upload', formData);
+    return this.http.post<string>('http://localhost:8080/upload', formData);
   }
 
 }
