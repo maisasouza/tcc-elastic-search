@@ -6,14 +6,17 @@
     <form>
       <div class="form-group">
         <label for="upload"> Arquivo upload </label>
-        <input type="file" class="form-control-file" id="upload" (change)="lerArquivo($event)" value="$event.files" accept=".pdf">
+        <input type="file" class="form-control-file" name="upload" (change)="lerArquivo($event)" value="$event.files" accept=".pdf" [(ngModel)]="inputArquivo">
       </div>
       <div class="form-group">
         <label for="quantidade"> Quantidade de vezes que o arquivo será indexado: </label>
-        <input type="number" class="form-control" id="quantidade" name="quantidade" [(ngModel)]="quantidadeArquivo" />
+        <input type="number" class="form-control" name="quantidade" [(ngModel)]="quantidadeArquivo" />
       </div>
       <div class="form-group">
         <button class="btn btn-primary" (click)="uploadArquivo()"> Upload Arquivo </button>
+      </div>
+      <div>
+        <p> {{ resposta }} </p>
       </div>
     </form>
   </div>

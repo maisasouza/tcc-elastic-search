@@ -9,6 +9,8 @@ import { ArquivoService } from '../arquivo.service';
 export class PesquisaComponent implements OnInit {
 
   termoBusca: string;
+  totalEncontrados;
+  listaResultado;
 
   constructor(private arquivoService: ArquivoService) { }
 
@@ -18,10 +20,16 @@ export class PesquisaComponent implements OnInit {
 
   pesquisar() {
     this.arquivoService.pesquisarTermo(this.termoBusca).subscribe(
-      (data) => {
-        console.log('Retornei da pesquisa');
-        console.log(data);
+      (data: any) => {
+        this.totalEncontrados = data.totalEncontrados;
+        this.listaResultado = data.resultado;
     });
+  }
+
+  limparCampos() {
+    this.totalEncontrados = undefined;
+    this.listaResultado = [];
+    this.termoBusca = undefined;
   }
 
 }
