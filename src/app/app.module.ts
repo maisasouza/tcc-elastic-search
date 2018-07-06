@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UploadArquivosComponent } from './upload-arquivos/upload-arquivos.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadArquivosComponent
+    UploadArquivosComponent,
+    PesquisaComponent
   ],
   imports: [
     BrowserModule,

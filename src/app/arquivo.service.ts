@@ -20,4 +20,8 @@ export class ArquivoService {
     return this.http.post<string>('http://localhost:8080/upload', formData);
   }
 
+  pesquisarTermo(termo: string) {
+    return this.http.get('http://localhost:8080/pesquisa/' + termo);
+  }
+
 }

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    Pesquisa de termos
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <label for="termobusca"> Termo de busca </label>
+        <input type="text" class="form-control" name="termobusca" [(ngModel)]="termoBusca">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="pesquisar()"> Pesquisar </button>
+      </div>
+    </form>
+  </div>
+</div>
